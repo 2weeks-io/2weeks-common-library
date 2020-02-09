@@ -34,20 +34,16 @@ public class FileService {
             // 서버에서 저장 할 파일 이름
             String saveFileName = genSaveFileName(size, extName);
 
-            System.out.println("originFilename : " + originFilename);
-            System.out.println("extensionName : " + extName);
-            System.out.println("size : " + size);
-            System.out.println("saveFileName : " + saveFileName);
-
             writeFile(multipartFile, saveFileName, path);
+            url = path + "/" + saveFileName;
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             // 원래라면 RuntimeException 을 상속받은 예외가 처리되어야 하지만
             // 편의상 RuntimeException을 던진다.
-            // throw new FileUploadException();
+
             throw new RuntimeException(e);
         }
+
         return url;
     }
 

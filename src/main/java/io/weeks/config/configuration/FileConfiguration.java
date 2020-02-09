@@ -1,5 +1,6 @@
 package io.weeks.config.configuration;
 
+import io.weeks.FileService.FileService;
 import io.weeks.config.dto.FileConfigDto;
 import io.weeks.config.properties.FileProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -20,6 +21,15 @@ public class FileConfiguration {
         fileConfigDto.setApplicationName(fileProperties.getApplicationName());
 
         return fileConfigDto;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public FileService fileService(){
+
+        FileService fileService = new FileService();
+
+        return fileService;
     }
 
 }

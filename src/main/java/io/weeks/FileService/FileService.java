@@ -35,7 +35,7 @@ public class FileService {
             String saveFileName = genSaveFileName(size, extName);
 
             writeFile(multipartFile, saveFileName, path);
-            url = path + "/" + saveFileName;
+            url = "/" + saveFileName;
 
         } catch (IOException e) {
             // 원래라면 RuntimeException 을 상속받은 예외가 처리되어야 하지만
@@ -82,9 +82,9 @@ public class FileService {
     }
 
     //앱이름과 년도일을 이용한 path 생성
-    public String makeSaveFilePath(String appName) {
+    public String makeSaveFilePath() {
 
-        String path = "/" + appName + "/";
+        String path = "/";
         Calendar cal = Calendar.getInstance();
         //현재 년도, 월, 일
         String year = Integer.toString(cal.get ( cal.YEAR ));

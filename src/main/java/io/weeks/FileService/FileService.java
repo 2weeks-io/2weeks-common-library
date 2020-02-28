@@ -18,20 +18,22 @@ public class FileService {
         try{
 
             File file = new File(filePath);
+
             if( file.exists() ){
                 if(file.delete()){
                     System.out.println("파일삭제 성공");
                 } else{
                     System.out.println("파일삭제 실패");
-                    result = "파일삭제 실패";
+                    result = "fail";
                 }
             } else{
                 System.out.println("파일이 존재하지 않습니다.");
-                result = "파일이 존재하지 않습니다.";
+                result = "fail";
             }
 
         } catch(Exception e){
-            result = "파일 삭제 중 에러가 발생하였습니다.";
+            System.out.println("파일삭제중 에러가 발생하였습니다.");
+            result = "fail";
         }
 
         return result;

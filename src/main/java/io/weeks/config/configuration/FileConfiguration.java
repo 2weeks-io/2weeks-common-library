@@ -23,13 +23,4 @@ public class FileConfiguration {
         return fileConfigDto;
     }
 
-    @Bean
-    @ConditionalOnMissingBean
-    public FileService fileService(){
-
-        FileService fileService = new FileService();
-
-        return fileService;
-    }
-
 }

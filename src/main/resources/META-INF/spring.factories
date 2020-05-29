@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    io.weeks.config.configuration.FileConfiguration,io.weeks.config.configuration.WebConfig,io.weeks.config.configuration.RestfulConfig
+    io.weeks.config.configuration.FileConfiguration,io.weeks.config.configuration.WebConfig,io.weeks.config.configuration.RestfulConfig,io.weeks.config.configuration.ModelMapperConfig

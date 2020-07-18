@@ -9,15 +9,11 @@ public class GlobalException extends RuntimeException{
 
     private static final long serialVersionUID = 1L;
     private String message;
-    private String errorCode;
+    private int code;
 
-    public GlobalException(String message) {
+    public GlobalException(String message, int code) {
         this.message = message;
-    }
-
-    public GlobalException(String message, String errorCode) {
-        this.message = message;
-        this.errorCode = errorCode;
+        this.code = code;
     }
 
 }
